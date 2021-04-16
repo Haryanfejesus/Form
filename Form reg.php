@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head> 
@@ -8,6 +14,19 @@
 </head>
 <body>
 <form name = "register" action = "processreg.php" method = "post" autocomplete = "on">
+<p>
+<?php
+  if(isset($_SESSION['error']) && !empty($_SESSION['error'])) {
+
+      echo $_SESSION  ['error']; 
+  }
+
+
+?>
+
+</p>
+
+
 <fieldset><legend>REGISTRATION FORM</legend>
  
 
@@ -28,25 +47,14 @@
     <P><input type = "submit" name = "submit" value = "Sign In"/></P>
     
     </fieldset>
-  <?php// $age = 16;
-// switch ($age) {
-//     case 18:
-//         echo ('you have access to the babe');
-//         break;
-//         case 16:
-//             echo ('You dont have access to the babe');
-//             break;
-//     default:
-//         echo ('you case wasnt found');
-//         break;
-// } -->
-
-?>
+  
     
 
 
 
 </form>
+
+
 
 </body>
 </html>
